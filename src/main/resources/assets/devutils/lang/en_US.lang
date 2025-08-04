@@ -1,5 +1,6 @@
-commands.highlight.usage=/highlight <name> <x1> <y1> <z1> <x2> <y2> <z2> <color>
+commands.highlight.usage=/highlight <name> <x1> <y1> <z1> <x2> <y2> <z2> <color> [type]
 commands.highlight.invalidColor=Invalid color for area
+commands.highlight.invalidType=Invalid type for area
 commands.highlight.success=Successfully highlighted area
 
 commands.dehighlight.usage=/dehighlight <name>

@@ -49,10 +49,20 @@ public class HighlightCommand extends CommandBase {
             throw new CommandException("commands.highlight.invalidColor");
         }
 
+        HighlightedAreaManager.Type type = HighlightedAreaManager.Type.OUTLINE;
+        if (args.length >= 9) {
+            try {
+                type = HighlightedAreaManager.Type.valueOf(args[8].toUpperCase());
+            } catch (Exception e) {
+                throw new CommandException("commands.highlight.invalidType");
+            }
+        }
+
         HighlightedAreaManager.INSTANCE.set(
             name,
             new AxisAlignedBB(minX, minY, minZ, maxX + 1.0f, maxY + 1.0f, maxZ + 1.0f),
-            color
+            color,
+            type
         );
         sender.addChatMessage(new ChatComponentTranslation("commands.highlight.success"));
     }
@@ -71,6 +81,8 @@ public class HighlightCommand extends CommandBase {
             return func_175771_a(args, 4, isHoveringBlock ? objectMouseOver.getBlockPos() : null);
         } else if (args.length == 8) {
             return getListOfStringsMatchingLastWord(args, HighlightedAreaManager.INSTANCE.getAvailableColors());
+        } else if (args.length == 9) {
+            return getListOfStringsMatchingLastWord(args, HighlightedAreaManager.INSTANCE.getAvailableTypes());
         } else {
             return Collections.emptyList();
         }
