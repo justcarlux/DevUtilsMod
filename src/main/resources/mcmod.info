@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "${modid}",
+    "name": "Nick Unhider",
+    "description": "",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "JustCarluX"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
